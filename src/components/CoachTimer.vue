@@ -29,7 +29,7 @@ export default {
   data() {
     return {
       timer: null,
-      totalTime: 3 * 60,
+      totalTime: 5 * 60,
       resetButton: false,
     };
   },
@@ -44,7 +44,7 @@ export default {
       this.resetButton = true;
     },
     resetTimer: function() {
-      this.totalTime = 3 * 60;
+      this.totalTime = 5 * 60;
       clearInterval(this.timer);
       this.timer = null;
       this.resetButton = false;
