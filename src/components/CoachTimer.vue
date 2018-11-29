@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="mt-5">
     <div id="timer">
       <span id="minutes">{{ minutes }}</span>
       <span id="middle">:</span>
@@ -73,3 +73,8 @@ export default {
   }
 };
 </script>
+<style>
+.mt-5 {
+  margin-top: 10em;
+}
+</style>

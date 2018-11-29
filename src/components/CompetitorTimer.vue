@@ -29,7 +29,7 @@ export default {
   data() {
     return {
       timer: null,
-      totalTime: 3 * 60,
+      totalTime: 5 * 60,
       resetButton: false,
       sound: new Audio(require("../../public/mcubator_sound.mp3"))
     };
