@@ -5,7 +5,6 @@
       <span id="middle">:</span>
       <span id="seconds">{{ seconds }}</span>
     </div>
-
     <div id="buttons">
       <!--     Start TImer -->
       <button id="start" class="button is-info is-large mr-5" v-if="!timer" @click="startTimer">
@@ -35,43 +34,43 @@ export default {
   },
   methods: {
     startTimer: function() {
-      this.timer = setInterval(() => this.countdown(), 1000);
-      this.resetButton = true;
+      this.timer = setInterval(() => this.countdown(), 1000)
+      this.resetButton = true
     },
     stopTimer: function() {
-      clearInterval(this.timer);
-      this.timer = null;
-      this.resetButton = true;
+      clearInterval(this.timer)
+      this.timer = null
+      this.resetButton = true
     },
     resetTimer: function() {
-      this.totalTime = 5 * 60;
-      clearInterval(this.timer);
-      this.timer = null;
-      this.resetButton = false;
+      this.totalTime = 5 * 60
+      clearInterval(this.timer)
+      this.timer = null
+      this.resetButton = false
     },
     padTime: function(time) {
-      return (time < 10 ? "0" : "") + time;
+      return (time < 10 ? "0" : "") + time
     },
     countdown: function() {
       if (this.totalTime >= 1) {
-        this.totalTime--;
+        this.totalTime--
       } else {
-        this.totalTime = 0;
-        this.resetTimer();
+        this.totalTime = 0
+        this.resetTimer()
       }
     }
   },
   computed: {
     minutes: function() {
-      const minutes = Math.floor(this.totalTime / 60);
-      return this.padTime(minutes);
+      const minutes = Math.floor(this.totalTime / 60)
+      return this.padTime(minutes)
     },
     seconds: function() {
-      const seconds = this.totalTime - this.minutes * 60;
-      return this.padTime(seconds);
+      const seconds = this.totalTime - this.minutes * 60
+      return this.padTime(seconds)
     }
   }
-};
+}
 </script>
 <style>
 .mt-5 {

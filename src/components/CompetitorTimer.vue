@@ -5,7 +5,6 @@
       <span id="middle">:</span>
       <span id="seconds">{{ seconds }}</span>
     </div>
-
     <div id="buttons">
       <!--     Start TImer -->
       <button id="start" class="button is-primary is-large mr-5" v-if="!timer" @click="startTimer">
@@ -36,48 +35,48 @@ export default {
   },
   methods: {
     startTimer: function() {
-      this.playSound();
-      this.resetButton = true;
-      this.timer = "1";
+      this.playSound()
+      this.resetButton = true
+      this.timer = "1"
       setTimeout(() => {
-        this.timer = setInterval(() => this.countdown(), 1000);
-      }, 7000);
+        this.timer = setInterval(() => this.countdown(), 1000)
+      }, 7000)
     },
     stopTimer: function() {
-      clearInterval(this.timer);
-      this.timer = null;
-      this.resetButton = true;
+      clearInterval(this.timer)
+      this.timer = null
+      this.resetButton = true
     },
     resetTimer: function() {
-      this.totalTime = 3 * 60;
-      clearInterval(this.timer);
-      this.timer = null;
-      this.resetButton = false;
+      this.totalTime = 5 * 60
+      clearInterval(this.timer)
+      this.timer = null
+      this.resetButton = false
     },
     padTime: function(time) {
-      return (time < 10 ? "0" : "") + time;
+      return (time < 10 ? "0" : "") + time
     },
     countdown: function() {
       if (this.totalTime >= 1) {
-        this.totalTime--;
+        this.totalTime--
       } else {
-        this.totalTime = 0;
-        this.resetTimer();
+        this.totalTime = 0
+        this.resetTimer()
       }
     },
     playSound() {
-      this.sound.play();
+      this.sound.play()
     }
   },
   computed: {
     minutes: function() {
-      const minutes = Math.floor(this.totalTime / 60);
-      return this.padTime(minutes);
+      const minutes = Math.floor(this.totalTime / 60)
+      return this.padTime(minutes)
     },
     seconds: function() {
-      const seconds = this.totalTime - this.minutes * 60;
-      return this.padTime(seconds);
+      const seconds = this.totalTime - this.minutes * 60
+      return this.padTime(seconds)
     }
   }
-};
+}
 </script>

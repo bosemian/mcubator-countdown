@@ -6,11 +6,9 @@
           <div ref="logo" class="fixed" :class="{'is-invisible': hide }">
             <img class="img-s-logo" src="../public/logo-mcubator.jpg" alt="mcubator">
           </div>
-          
           <div class="has-text-centered">
             <img class="img-logo" src="../public/logo-mcubator.jpg" alt="mcubator">
           </div>
-          
           <competitor-timer></competitor-timer>
           <br>
           <coach-timer></coach-timer>
